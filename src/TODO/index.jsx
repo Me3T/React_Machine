@@ -25,7 +25,7 @@ const Todo = () => {
       <input
         type="text"
         value={input}
-        placeholder="Enter a task"
+        placeholder="Enter a Task"
         onChange={(e) => setInput(e.target.value)}
       />
       <button onClick={addTodo}>Add</button>
