@@ -28,7 +28,7 @@ const Todo = () => {
         placeholder="Enter a Task"
         onChange={(e) => setInput(e.target.value)}
       />
-      <button onClick={addTodo}>ADD</button>
+      <button onClick={addTodo}>Add</button>
 
       <ul>
         {todo.map((todo) => {
