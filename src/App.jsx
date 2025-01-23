@@ -1,10 +1,12 @@
 import "./App.css";
+import DataFetch from "./data-fetch";
 import Todo from "./TODO";
 
 function App() {
   return (
     <div>
-      <Todo />
+      {/* <Todo /> */}
+      <DataFetch />
     </div>
   );
 }
