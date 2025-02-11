@@ -1,12 +1,14 @@
 import "./App.css";
 import DataFetch from "./data-fetch";
 import Todo from "./TODO";
+import Pagination from "./pagination";
 
 function App() {
   return (
     <div>
       {/* <Todo /> */}
-      <DataFetch />
+      {/* <DataFetch /> */}
+      <Pagination />
     </div>
   );
 }
