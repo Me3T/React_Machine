@@ -1,7 +1,7 @@
 import "./App.css";
 import DataFetch from "./data-fetch";
 import Todo from "./TODO";
-import Pagination from "./pagination";
+import Pagination from "./Pagination";
 
 function App() {
   return (
