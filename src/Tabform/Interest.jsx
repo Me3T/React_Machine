@@ -1,9 +1,9 @@
 const Interest = () => {
-  return <div>
+  return (
     <div>
-      
+      <div>Interest</div>
     </div>
-  </div>;
+  );
 };
 
 export default Interest;
