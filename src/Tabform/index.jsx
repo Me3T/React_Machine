@@ -28,6 +28,18 @@ const Tabform = () => {
     },
   ];
 
+  const prevTab = () => {
+    setActiveTab((prev) => prev - 1);
+  };
+
+  const nextTab = () => {
+    setActiveTab((prev) => prev + 1);
+  };
+
+  const submit = () => {
+    console.log(data);
+  };
+
   const ActiveTab = tabs[activeTab].component;
 
   return (
@@ -49,10 +61,12 @@ const Tabform = () => {
         <ActiveTab data={data} setData={setData} />
       </div>
       <div>
-        {activeTab > 0 && <button>Prev</button>}
-        {activeTab < tabs.length - 1 && <button>Next</button>}
-        
-        {activeTab === tabs.length - 1 && <button>Submit</button>}
+        {activeTab > 0 && <button onClick={prevTab}>Prev</button>}
+        {activeTab < tabs.length - 1 && <button onClick={nextTab}>Next</button>}
+
+        {activeTab === tabs.length - 1 && (
+          <button onClick={submit}>Submit</button>
+        )}
       </div>
     </div>
   );
