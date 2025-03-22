@@ -48,6 +48,12 @@ const Tabform = () => {
       <div className="tab-body">
         <ActiveTab data={data} setData={setData} />
       </div>
+      <div>
+        {activeTab > 0 && <button>Prev</button>}
+        {activeTab < tabs.length - 1 && <button>Next</button>}
+        
+        {activeTab === tabs.length - 1 && <button>Submit</button>}
+      </div>
     </div>
   );
 };
