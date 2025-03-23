@@ -17,10 +17,33 @@ const Tabform = () => {
     {
       name: "Profile",
       component: Profile,
+      validate: () => {
+        const err = {};
+        if (!data.name || data.name.length < 2) {
+          err.name = "Name is not valid";
+        }
+        if (!data.age || data.age < 18) {
+          err.age = "Age is not valid";
+        }
+        if (!data.email || data.email < 2) {
+          err.email = "Email is not valid";
+        }
+
+        setErrors(err);
+        return err.name || err.age || err.email ? false : true;
+      },
     },
     {
       name: "Interest",
       component: Interest,
+      validate: () => {
+        const err = {};
+        if (data.interest.length < 1) {
+          err.interest = "Select atleast one interest";
+        }
+        setErrors(err);
+        return err.interest ? false : true;
+      },
     },
     {
       name: "Settings",
@@ -33,12 +56,15 @@ const Tabform = () => {
   };
 
   const nextTab = () => {
-    setActiveTab((prev) => prev + 1);
+    if (tabs[activeTab].validate()) {
+      setActiveTab((prev) => prev + 1);
+    }
   };
 
   const submit = () => {
     console.log(data);
   };
+  const [errors, setErrors] = useState({});
 
   const ActiveTab = tabs[activeTab].component;
 
@@ -50,7 +76,7 @@ const Tabform = () => {
             <div
               key={index}
               className="heading"
-              onClick={() => setActiveTab(index)}
+              onClick={() => tabs[activeTab].validate() && setActiveTab(index)}
             >
               {tab.name}
             </div>
@@ -58,7 +84,7 @@ const Tabform = () => {
         })}
       </div>
       <div className="tab-body">
-        <ActiveTab data={data} setData={setData} />
+        <ActiveTab data={data} setData={setData} errors={errors} />
       </div>
       <div>
         {activeTab > 0 && <button onClick={prevTab}>Prev</button>}

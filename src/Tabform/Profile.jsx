@@ -1,4 +1,4 @@
-const Profile = ({ data, setData }) => {
+const Profile = ({ data, setData, errors }) => {
   const { name, age, email } = data;
 
   const handleChange = (e, item) => {
@@ -14,6 +14,7 @@ const Profile = ({ data, setData }) => {
           value={name}
           onChange={(e) => handleChange(e, "name")}
         />
+        {errors.name && <span className="error">{errors.name}</span>}
       </div>
       <div>
         <label>Age :</label>
@@ -22,6 +23,7 @@ const Profile = ({ data, setData }) => {
           value={age}
           onChange={(e) => handleChange(e, "age")}
         />
+        {errors.age && <span className="error">{errors.age}</span>}
       </div>
       <div>
         <label>Email :</label>
@@ -30,6 +32,7 @@ const Profile = ({ data, setData }) => {
           value={email}
           onChange={(e) => handleChange(e, "email")}
         />
+        {errors.email && <span className="error">{errors.email}</span>}
       </div>
     </div>
   );
