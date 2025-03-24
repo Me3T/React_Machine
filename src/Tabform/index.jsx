@@ -7,10 +7,10 @@ import "./style.css";
 const Tabform = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [data, setData] = useState({
-    name: "Meet",
-    age: "26",
-    email: "meet@gmail.com",
-    interest: ["Cricket", "Anime"],
+    name: "",
+    age: "",
+    email: "",
+    interest: [""],
     theme: "dark",
   });
   const tabs = [
