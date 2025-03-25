@@ -61,7 +61,7 @@ const Tabform = () => {
     }
   };
 
-  const submit = () => {
+  const submitButton = () => {
     console.log(data);
   };
   const [errors, setErrors] = useState({});
@@ -91,7 +91,7 @@ const Tabform = () => {
         {activeTab < tabs.length - 1 && <button onClick={nextTab}>Next</button>}
 
         {activeTab === tabs.length - 1 && (
-          <button onClick={submit}>Submit</button>
+          <button onClick={submitButton}>Submit</button>
         )}
       </div>
     </div>
