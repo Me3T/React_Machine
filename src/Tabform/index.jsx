@@ -23,7 +23,7 @@ const Tabform = () => {
           err.name = "Name is not valid";
         }
         if (!data.age || data.age < 18) {
-          err.age = "Age is not valid";
+          err.age = "Only 18+";
         }
         if (!data.email || data.email < 2) {
           err.email = "Email is not valid";
