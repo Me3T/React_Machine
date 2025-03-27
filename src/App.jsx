@@ -8,9 +8,9 @@ function App() {
   return (
     <div>
       {/* <Todo /> */}
-      {/* <DataFetch /> */}
+      <DataFetch />
       {/* <Pagination /> */}
-      <Tabform />
+      {/* <Tabform /> */}
     </div>
   );
 }

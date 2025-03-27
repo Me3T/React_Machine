@@ -6,17 +6,37 @@ const DataFetch = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // useEffect(() => {
+  //   axios
+  //     .get("https://jsonplaceholder.typicode.com/todos")
+  //     .then((response) => {
+  //       setTodo(response.data);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       setError("Error while fetching the data");
+  //       setLoading(false);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/todos")
-      .then((response) => {
-        setTodo(response.data);
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/todos"
+        );
+        if (!response.ok) {
+          throw new Error("Network response not OK");
+        }
+        const data = await response.json();
+        setTodo(data);
         setLoading(false);
-      })
-      .catch((error) => {
-        setError("Error while fetching the data");
+      } catch (err) {
+        setError("Error while loading the data");
         setLoading(false);
-      });
+      }
+    };
+    fetchData()
   }, []);
 
   if (loading) return <h1>Loading...</h1>;
