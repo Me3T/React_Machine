@@ -1,7 +1,7 @@
 const Otp = () => {
   return (
     <div>
-      <h1>otp</h1>
+      <h1>OTP</h1>
     </div>
   );
 };
